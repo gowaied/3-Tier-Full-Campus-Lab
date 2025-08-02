@@ -32,13 +32,4 @@ This lab project models a structured enterprise network with multiple department
 
 ---
 
-## 📂 File Contents
 
-```bash
-📁 Full-Campus-3Tier-Network
-├── README.md                 # Project documentation
-├── FullCampusNetwork.pkt     # Cisco Packet Tracer project file
-├── VLAN-IP-Plan.xlsx         # VLANs and IP address documentation (optional)
-├── Network-Diagram.png       # Logical topology diagram (optional)
-└── Notes/
-    └── Configurations.txt    # CLI snippets and router/switch configs
