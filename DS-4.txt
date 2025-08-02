@@ -1,0 +1,194 @@
+Building configuration...
+
+Current configuration : 3035 bytes
+!
+version 12.2(37)SE1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname DS-2
+!
+!
+enable secret 5 $1$mERr$vTbHul1N28cEp8lkLqr0f/
+!
+!
+!
+!
+!
+ip routing
+!
+!
+!
+!
+username admin secret 5 $1$mERr$vTbHul1N28cEp8lkLqr0f/
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+ip domain-name gowaied.com
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree vlan 70,80 priority 24576
+spanning-tree vlan 50,60 priority 28672
+!
+!
+!
+!
+!
+!
+interface Port-channel1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/3
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/4
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/5
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 1 mode auto
+!
+interface FastEthernet0/6
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 1 mode auto
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+ no switchport
+ ip address 192.168.1.25 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ no switchport
+ ip address 192.168.1.29 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan50
+ mac-address 00e0.a318.c301
+ ip address 192.168.50.2 255.255.255.0
+ ip helper-address 192.168.130.3
+ standby 50 ip 192.168.50.254
+!
+interface Vlan60
+ mac-address 00e0.a318.c302
+ ip address 192.168.60.2 255.255.255.0
+ ip helper-address 192.168.130.3
+ standby 60 ip 192.168.60.254
+!
+interface Vlan70
+ mac-address 00e0.a318.c303
+ ip address 192.168.70.2 255.255.255.0
+ ip helper-address 192.168.130.3
+ standby 70 ip 192.168.70.254
+ standby 70 priority 102
+ standby 70 preempt
+!
+interface Vlan80
+ mac-address 00e0.a318.c304
+ ip address 192.168.80.2 255.255.255.0
+ ip helper-address 192.168.130.3
+ standby 80 ip 192.168.80.254
+ standby 80 priority 102
+ standby 80 preempt
+!
+interface Vlan99
+ mac-address 00e0.a318.c305
+ ip address 192.168.100.12 255.255.255.0
+!
+router ospf 1
+ router-id 0.0.0.4
+ log-adjacency-changes
+ network 192.168.0.0 0.0.255.255 area 0
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ password ccna
+ logging synchronous
+!
+line aux 0
+!
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+!
+!
+!
+end
