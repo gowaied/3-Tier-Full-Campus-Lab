@@ -15,6 +15,8 @@ This lab project models a structured enterprise network with multiple department
 - **2 User Buildings**
 - **Redundant Links + High Availability**
 
+![Logical Topology](./topology.png)
+
 ---
 
 ## 🔧 Technical Features
